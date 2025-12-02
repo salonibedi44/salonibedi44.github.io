@@ -45,11 +45,12 @@ jobs:
           enablement: true
       - name: Build with Hugo
         run: |
+          ls -la content/
           hugo \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --source .
+            --contentDir content
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
