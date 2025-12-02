@@ -35,7 +35,7 @@ h1 {
 
 .menu-item {
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 10px;
 }
 
 h2 {
@@ -66,9 +66,18 @@ hr {
   border: none;
 }
 
-a {
-  text-decoration: underline;
-  color: #000;
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+div a,
+div[style] a,
+p a,
+#home-content-container a,
+#home-content-container div a {
+  text-decoration: none !important;
+  color: maroon
 }
 
 .allergen-item {
