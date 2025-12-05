@@ -7,22 +7,22 @@
     </a>
   </div>  
 
-  <h1>{{ .Title }}</h1>
+  <h1 class="title">{{ .Title }}</h1>
   <div class="container">
     {{ range .Params.menu }}
     <div class="menu-item">
-        <!-- {{ with .items }}
-        {{ range . }} -->
-        <div>
-            <h3>{{ .name }} </h3>
-            <p>{{ .description }}</p>
-            {{ if .allergens }}
-              <span class="allergen-item"><i>Contains: {{ delimit .allergens ", " }}</i></span>
-            {{ end }}
+      <div>
+        <img src="{{ .logo }}" class="company-logo">
+      </div>
+      <div class="single-experience">
+        <div class="company-name">
+          <h2>{{ .position }}</h2>
+          <h3>{{ .company }}</h3>
+          <p>{{ .date }}</p>
+          <hr>
         </div>
-        <hr>
-        <!-- {{ end }}
-        {{ end }} -->
+        <p>{{ .description | markdownify}}</p>
+      </div>
     </div>
     {{ end }}
   </div>
@@ -33,5 +33,4 @@
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
-
 
